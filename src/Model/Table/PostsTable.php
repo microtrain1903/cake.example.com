@@ -43,6 +43,10 @@ class PostsTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id'
         ]);
+
+        $this->hasMany('Comments', [
+            'foreignKey' => 'post_id'
+        ]);
     }
 
     /**

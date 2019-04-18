@@ -73,4 +73,13 @@
         <h4><?= __('Body') ?></h4>
         <?= $this->Text->autoParagraph(h($post->body)); ?>
     </div>
+
+    <?php foreach ($post['comments'] as $comment): ?>
+        <div class="row">
+            <h4><?= __('Comment') ?></h4>
+            <em><?= $comment->first_name . ' ' . $comment->last_name; ?> responded: </em>
+            <br><br>
+            <?= $this->Text->autoParagraph(h($comment->comment)); ?>
+        </div>
+    <?php endforeach; ?>
 </div>
