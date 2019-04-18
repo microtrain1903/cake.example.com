@@ -13,6 +13,24 @@
         <li><?= $this->Html->link(__('New Post'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+        <li>
+        <?php
+            echo $this->Html->link(__('New Comment'), [
+                'controller' => 'Comments',
+                'action' => 'add',
+                $post->id
+            ]);
+        ?>
+        </li>
+        <li>
+        <?php
+            echo $this->Html->link(__('Comments'), [
+                'controller' => 'Comments',
+                'action' => 'index',
+                $post->id
+            ]);
+        ?>
+        </li>
     </ul>
 </nav>
 <div class="posts view large-9 medium-8 columns content">

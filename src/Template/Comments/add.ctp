@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Comment $comment
  */
+
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
@@ -17,7 +18,7 @@
     <fieldset>
         <legend><?= __('Add Comment') ?></legend>
         <?php
-            echo $this->Form->control('post_id', ['options' => $posts, 'empty' => true]);
+            echo $this->Form->control('post_id', ['value'=>$this->request->pass[0], 'empty' => true, 'type'=>'hidden']);
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
             echo $this->Form->control('email');

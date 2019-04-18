@@ -20,6 +20,7 @@ class CommentsController extends AppController
     public function index()
     {
         $this->paginate = [
+            'conditions' => ['post_id'=>$this->request->pass[0]],
             'contain' => ['Posts']
         ];
         $comments = $this->paginate($this->Comments);
