@@ -1,0 +1,10 @@
+CREATE TABLE posts (
+    id CHAR(36) PRIMARY KEY,
+    post_id CHAR(36),
+    first_name VARCHAR(40),
+    last_name VARCHAR(40),
+    email VARCHAR(255),
+    comment TEXT,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    modified DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=INNODB;
